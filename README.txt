@@ -77,3 +77,13 @@ $ Dollar sign               $
 " quote                     "
 ( Left paren                (
 ) Right paren               )
+
+AUTHOR:
+
+Percy Wegmann: http://www.percywegmann.com/
+
+The orignal of this code is avallable http://code.google.com/p/jspos/
+
+Kieren Diment <zarquon@cpan.org> added the demo.html and main.js files.
+
+The next step is to add noun phrase extraction routines and other utility functions (see the Perl Module Lingua::EN::Tagger: http://search.cpan.org/perldoc?Lingua::EN::Tagger ).
