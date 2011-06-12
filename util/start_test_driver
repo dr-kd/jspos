@@ -1,0 +1,15 @@
+#!/bin/sh
+# Headless test runner from http://code.google.com/p/js-test-driver/downloads/list
+java -jar ~/bin/JsTestDriver-1.3.2.jar --port 4224 &
+echo Now open http://localhost:4224 and click one of the capture broswer links.
+
+## From *Test-Driven JavaScript Development* Addison Wesley 2010.
+## Open any browser and point it to http://localhost:4224 (make sure you change
+## the port number if you used another port when starting the server). The
+## resulting page will display two links: Capture browser and Capture in strict
+## mode. JsTestDriver runs tests inside an HTML 4.01 document, and the two
+## links allow us to decide if we want to run tests with a transitional or
+## strict doctype. Click the appropriate link, and leave the browser
+## open. Repeat in as many browsers as desired. You can even try hooking up
+## your phone or browsers on other platforms using virtual instances.
+
