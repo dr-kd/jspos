@@ -13,9 +13,16 @@ OrigTest.prototype.testOrig = function (){
     for (i in tags) {
 	var tag = tags[i];
         var msg = tag[0] + " /" + tag[1];
-        jstestdriver.console.log(msg); // hack for diag
+        // jstestdriver.console.log(msg); // hack for diag
     }
     var time = "Tokenized and tagged " + words.length + " words in " + difference + " milliseconds";
     jstestdriver.console.log(time);
-    assertTrue(true);
+    assert(time, true);
+
+    // and pretty print test
+    var prettyTestWords = lexer.lex("This is a test: e.g. some sort of thing.");
+    var prettyTestRes = tagger.tag(prettyTestWords);
+    assertEquals(tagger.prettyPrint(prettyTestRes),
+                 "This(DT) is(VBZ) a(DT) test:(NN) e(NN) .(.) g(NN) .(.) some(DT) sort(NN) of(IN) thing(VBG) .(.) "
+);
 };
