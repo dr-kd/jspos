@@ -1,3 +1,10 @@
+/**
+ * Very simple demo-server.
+ * 
+ * run with npm server, or node demo/server.js
+ * 
+ */
+
 var static = require('node-static');
 
 port = 8080
