@@ -6,7 +6,8 @@
   "homepage": "https://github.com/singingfish/jspos",
   "author": "Percy Wegmann (http://www.percywegmann.com/)",
   "scripts": {
-    "test": "vows --spec test/*"
+    "test": "vows --spec test/*",
+    "start": "node demo/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
     }
   ],
   "devDependencies": {
-    "vows":""
+    "vows":"",
+    "node-static" : ""
   }
 }
