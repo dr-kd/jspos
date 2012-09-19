@@ -9,6 +9,53 @@ var vows = require('vows'),
 var lexer = new jspos.Lexer();
 var tagger = new jspos.POSTagger();
 
+var codes = [
+  ["CC","Coord Conjuncn","and,but,or"],
+  ["CD","Cardinal number","one,two"],
+  ["DT","Determiner","the,some"],
+  ["EX","Existential there","there"],
+  ["FW","Foreign Word","mon dieu"],
+  ["IN","Preposition","of,in,by"],
+  ["JJ","Adjective","big"],
+  ["JJR","Adj., comparative","bigger"],
+  ["JJS","Adj., superlative","biggest"],
+  ["LS","List item marker","1,One"],
+  ["MD","Modal","can,should"],
+  ["NN","Noun, sing. or mass","dog"],
+  ["NNP","Proper noun, sing.","Edinburgh"],
+  ["NNPS Proper noun, plural","Smiths"],
+  ["NNS","Noun, plural","dogs"],
+  ["POS","Possessive ending","'s"],
+  ["PDT","Predeterminer","all,both"],
+  ["PP$","Possessive pronoun","my,one's"],
+  ["PRP","Personal pronoun","I,you,she"],
+  ["RB","Adverb","quickly"],
+  ["RBR","Adverb, comparative","faster"],
+  ["RBS","Adverb, superlative","fastest"],
+  ["RP","Particle","up,off"],
+  ["SYM","Symbol","+,%,&"],
+  ["TO","?to?","to"],
+  ["UH","Interjection","oh, oops"],
+  ["VB","verb, base form","eat"],
+  ["VBD","verb, past tense","ate"],
+  ["VBG","verb, gerund","eating"],
+  ["VBN","verb, past part","eaten"],
+  ["VBP","Verb, present","eat"],
+  ["VBZ","Verb, present","eats"],
+  ["WDT","Wh-determiner","which,that"],
+  ["WP","Wh pronoun","who,what"],
+  ["WP$","Possessive-Wh","whose"],
+  ["WRB","Wh-adverb","how,where"],
+  [",","Comma",","],
+  [".","Sent-final punct",". ! ?"],
+  [":","Mid-sent punct.",": ; ?"],
+  ["$","Dollar sign","$"],
+  ["#","Pound sign","#"],
+  ['"',"quote",'"'],
+  ["(","Left paren","("],
+  [")","Right paren",")"]
+]
+
 exports.jspos = vows.describe('jspos').addBatch({
     "The jspos library should be able to": {
         "create a Lexer instance" : function(){
@@ -38,6 +85,16 @@ exports.jspos = vows.describe('jspos').addBatch({
           var prettyTestRes = tagger.tag(prettyTestWords);
           var test_text = "This(DT) is(VBZ) a(DT) test:(NN) e(NN) .(.) g(NN) .(.) some(DT) sort(NN) of(IN) thing(VBG) .(.) ";
           assert.equal(tagger.prettyPrint(prettyTestRes), test_text);
+        },
+
+        "conform to documented codes" : function(){
+          codes.forEach(function(c){
+            var words = c[2].split(',');
+            var tags = tagger.tag(words);
+            tags.forEach(function(tag){
+              assert(tag[1] == c[0], c[1] + " (" + c[0] + ") got " + tag[1] + ' on "' + tag[0] + '"');
+            });
+          });
         }
     }
 });
