@@ -9,8 +9,8 @@ var vows = require('vows'),
 var lexer = new jspos.Lexer();
 var tagger = new jspos.POSTagger();
 
-exports.jsPOS = vows.describe('jsPOS').addBatch({
-    "The jsPOS library should be able to": {
+exports.jspos = vows.describe('jsPOS').addBatch({
+    "The jspos library should be able to": {
         "create a Lexer instance" : function(){
           assert(lexer);
         },
