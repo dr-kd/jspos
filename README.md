@@ -81,7 +81,7 @@ There are a few tools linked to npm, via **package.json**:
     NNPS Proper noun, plural      Smiths
     NNS  Noun, plural             dogs
     POS  Possessive ending        ?s
-    PDT  Predeterminer            all, both
+    PDT  Predeterminer            all,both
     PP$  Possessive pronoun       my,one's
     PRP  Personal pronoun         I,you,she
     RB   Adverb                   quickly
@@ -90,7 +90,7 @@ There are a few tools linked to npm, via **package.json**:
     RP   Particle                 up,off
     SYM  Symbol                   +,%,&
     TO   ?to?                     to
-    UH   Interjection             oh, oops
+    UH   Interjection             oh,oops
     VB   verb, base form          eat
     VBD  verb, past tense         ate
     VBG  verb, gerund             eating

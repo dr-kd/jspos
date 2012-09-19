@@ -61,7 +61,6 @@ code_tests = {};
 
 codes.forEach(function(c){
   var words = c[2].split(',');
-  console.log(words);
   if (c[2] == ","){
     var tags = tagger.tag(',');
   }else{
