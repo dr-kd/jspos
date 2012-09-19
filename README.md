@@ -14,14 +14,15 @@ jspos is a Javascript port of [Mark Watson's FastTag Part of Speech Tagger](http
 
 See demo in **demos/simple/**.
 
-    var words = new Lexer().lex("This is some sample text. This text can contain multiple sentences.");
-    var taggedWords = new POSTagger().tag(words);
-    for (i in taggedWords) {
-        var taggedWord = taggedWords[i];
-        var word = taggedWord[0];
-        var tag = taggedWord[1];
-    }
-
+```javascript
+var words = new Lexer().lex("This is some sample text. This text can contain multiple sentences.");
+var taggedWords = new POSTagger().tag(words);
+for (i in taggedWords) {
+    var taggedWord = taggedWords[i];
+    var word = taggedWord[0];
+    var tag = taggedWord[1];
+}
+```
 
 ### node.js
 
@@ -29,25 +30,28 @@ See demo using [vows](http://vowsjs.org/) testing in **test/**
 
 You can install jspos in your project (once jspos is published to npm) with this command: `npm install jspos`. You can use it in your code, like this:
 
-    var jspos = require('jspos'),
-      lexer =  new jspos.Lexer(),
-      tagger = new jspos.POSTagger();
+```javascript
+var jspos = require('jspos'),
+  lexer =  new jspos.Lexer(),
+  tagger = new jspos.POSTagger();
 
-    var tags = tagger.tag(lexer.lex("This is some text. It can be whatever length. Cool!"));
-    console.log(tags)
-
+var tags = tagger.tag(lexer.lex("This is some text. It can be whatever length. Cool!"));
+console.log(tags);
+```
 
 ### require.js
 
 See demo in **demos/simple_with_require/**.
 
-    define(['jspos/lib/post_tagger', 'jspos/lib/lexer'], function(POSTagger, Lexer){
-      var lexer =  new Lexer(),
-          tagger = new POSTagger();
+```javascript
+define(['jspos/lib/post_tagger', 'jspos/lib/lexer'], function(POSTagger, Lexer){
+  var lexer =  new Lexer(),
+      tagger = new POSTagger();
 
-      var tags = tagger.tag(lexer.lex("This is some text. It can be whatever length. Cool!"));
-      console.log(tags)
-    });
+  var tags = tagger.tag(lexer.lex("This is some text. It can be whatever length. Cool!"));
+  console.log(tags)
+});
+```
 
 ### developer tools
 
@@ -110,7 +114,6 @@ There are a few tools linked to npm, via **package.json**:
 ## LICENSE
 
 jspos is licensed under the GNU LGPLv3
-
 
 
 ## ACKNOWLEDGEMENTS
