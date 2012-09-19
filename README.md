@@ -126,6 +126,6 @@ The orignal of this code is avallable [on google code](http://code.google.com/p/
 
 Kieren Diment <zarquon@cpan.org> added the demo.html and main.js files.
 
-David Konsumer <konsumer@jetboystudio.com> updated demos & added npm/node/require.js support
+David Konsumer <konsumer@jetboystudio.com> updated demos, documentation & added npm/node/require.js support
 
 The next step is to add noun phrase extraction routines and other utility functions (see the Perl Module [Lingua::EN::Tagger](http://search.cpan.org/perldoc?Lingua::EN::Tagger)  ).
