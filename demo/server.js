@@ -1,8 +1,8 @@
 /**
  * Very simple demo-server.
- * 
+ *
  * run with npm server, or node demo/server.js
- * 
+ *
  */
 
 var static = require('node-static');
@@ -19,4 +19,5 @@ require('http').createServer(function (request, response) {
 
 console.log("Simple demo at http://localhost:"+port+"/demo/simple/");
 console.log("Require demo at http://localhost:"+port+"/demo/simple_with_require/");
-console.log("Hit Ctrl-C to stop demo server.");
+console.log("Eliza demo at http://localhost:"+port+"/demo/eliza/");
+console.log("\nHit Ctrl-C to stop demo server.");

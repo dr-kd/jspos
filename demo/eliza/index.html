@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Eliza Demo</title>
+    <style type="text/css">
+      body, input, textarea {
+        font-size: 20px;
+      }
+
+      textarea, input {
+        width: 100%;
+      }
+
+      textarea {
+        height: 500px;
+        display:block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="eliza">
+      <textarea id="output" disabled="disabled">This is an Eliza simulation using jspos. Press [Enter] to say something.</textarea>
+      <input id="input">
+    </form>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
+  <script src="../../lib/lexer.js" type="text/javascript"></script>
+  <script src="../../lib/lexicon.js" type="text/javascript"></script>
+  <script src="../../lib/POSTagger.js" type="text/javascript"></script>
+  <script src="main.js" type="text/javascript"></script>
+</html>
