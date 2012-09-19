@@ -1,5 +1,5 @@
 /**
- * Simple node wrapper around library, so it's call structured together
+ * Simple node wrapper around library, so it's all structured together in module
  */
 
 exports.POSTagger = require('./lib/POSTagger.js');
