@@ -1,5 +1,5 @@
 /**
- * Run with vows command-line util, "npm test", or require('test/test_jspos').run()
+ * Run with "vows" command-line util, "npm test", or require('test/test_jspos').run()
  */
 
 var vows = require('vows'),
