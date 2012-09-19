@@ -1,3 +1,8 @@
+/**
+ * Simple javascript minifier
+ * run with node build.js or npm run-script build
+ */
+
 var uglify = require('uglify-js'),
   path = require('path');
   fs = require('fs');

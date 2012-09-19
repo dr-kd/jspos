@@ -60,7 +60,7 @@ There are a few tools linked to npm, via **package.json**:
 * `npm install` - install all dependencies
 * `npm test`  - test the library
 * `npm start` - start the demo webserver
-* `npm run-script build` - creates a minified version of the library (for the web) in jspos.min.js
+* `node build.js` - creates a minified version of the library (for the web) in jspos.min.js
 
 
 ## TAGS
