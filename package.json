@@ -6,6 +6,7 @@
   "homepage": "https://github.com/singingfish/jspos",
   "author": "Percy Wegmann (http://www.percywegmann.com/)",
   "scripts": {
+    "test": "vows --spec test/*"
   },
   "repository": {
     "type": "git",
@@ -14,9 +15,10 @@
   "licenses": [
     {
       "type": "GNU LESSER GENERAL PUBLIC LICENSE-3",
-      "url": "http://www.gnu.org/licenses/lgpl.html"
+      "url": "http://www.opensource.org/licenses/lgpl-3.0.html"
     }
   ],
   "devDependencies": {
+    "vows":""
   }
 }
