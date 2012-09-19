@@ -9,6 +9,7 @@ var vows = require('vows'),
 var lexer = new jspos.Lexer();
 var tagger = new jspos.POSTagger();
 
+// documented codes
 var codes = [
   ["CC","Coord Conjuncn","and,but,or"],
   ["CD","Cardinal number","one,two"],
@@ -23,7 +24,7 @@ var codes = [
   ["MD","Modal","can,should"],
   ["NN","Noun, sing. or mass","dog"],
   ["NNP","Proper noun, sing.","Edinburgh"],
-  ["NNPS Proper noun, plural","Smiths"],
+  ["NNPS","Proper noun, plural","Smiths"],
   ["NNS","Noun, plural","dogs"],
   ["POS","Possessive ending","'s"],
   ["PDT","Predeterminer","all,both"],
@@ -47,14 +48,33 @@ var codes = [
   ["WP$","Possessive-Wh","whose"],
   ["WRB","Wh-adverb","how,where"],
   [",","Comma",","],
-  [".","Sent-final punct",". ! ?"],
-  [":","Mid-sent punct.",": ; ?"],
+  [".","Sent-final punct",".,!,?"],
+  [":","Mid-sent punct.",":,;,?"],
   ["$","Dollar sign","$"],
   ["#","Pound sign","#"],
   ['"',"quote",'"'],
   ["(","Left paren","("],
   [")","Right paren",")"]
 ]
+
+code_tests = {};
+
+codes.forEach(function(c){
+  var words = c[2].split(',');
+  console.log(words);
+  if (c[2] == ","){
+    var tags = tagger.tag(',');
+  }else{
+    var tags = tagger.tag(words);
+  }
+
+  tags.forEach(function(tag){
+    code_tests[c[1] + " (" + c[0] + ")"] = function(){
+      assert(tag[1] == c[0], "got " + tag[1] + ' on "' + tag[0] + '"');
+    }
+  });
+});
+
 
 exports.jspos = vows.describe('jspos').addBatch({
     "The jspos library should be able to": {
@@ -87,15 +107,7 @@ exports.jspos = vows.describe('jspos').addBatch({
           assert.equal(tagger.prettyPrint(prettyTestRes), test_text);
         },
 
-        "conform to documented codes" : function(){
-          codes.forEach(function(c){
-            var words = c[2].split(',');
-            var tags = tagger.tag(words);
-            tags.forEach(function(tag){
-              assert(tag[1] == c[0], c[1] + " (" + c[0] + ") got " + tag[1] + ' on "' + tag[0] + '"');
-            });
-          });
-        }
+        "conform to documented codes" : code_tests
     }
 });
 

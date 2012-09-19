@@ -82,7 +82,7 @@ There are a few tools linked to npm, via **package.json**:
     NNS  Noun, plural             dogs
     POS  Possessive ending        ?s
     PDT  Predeterminer            all, both
-    PP$  Possessive pronoun       my,one?s
+    PP$  Possessive pronoun       my,one's
     PRP  Personal pronoun         I,you,she
     RB   Adverb                   quickly
     RBR  Adverb, comparative      faster
@@ -102,8 +102,8 @@ There are a few tools linked to npm, via **package.json**:
     WP$  Possessive-Wh            whose
     WRB  Wh-adverb                how,where
     ,    Comma                    ,
-    .    Sent-final punct         . ! ?
-    :    Mid-sent punct.          : ; ?
+    .    Sent-final punct         .,!,?
+    :    Mid-sent punct.          :,;,?
     $    Dollar sign              $
     #    Pound sign               #
     "    quote                    "
