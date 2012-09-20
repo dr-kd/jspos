@@ -4,63 +4,37 @@
 
 var vows = require('vows'),
   assert = require('assert'),
-  jspos = require('../');
+  jspos = require('../'),
+  fs = require('fs')
+  path = require('path');
 
 var lexer = new jspos.Lexer();
 var tagger = new jspos.POSTagger();
 
-// documented codes
-var codes = [
-  ["CC","Coord Conjuncn","and,but,or"],
-  ["CD","Cardinal number","one,two"],
-  ["DT","Determiner","the,some"],
-  ["EX","Existential there","there"],
-  ["FW","Foreign Word","mon dieu"],
-  ["IN","Preposition","of,in,by"],
-  ["JJ","Adjective","big"],
-  ["JJR","Adj., comparative","bigger"],
-  ["JJS","Adj., superlative","biggest"],
-  ["LS","List item marker","1,One"],
-  ["MD","Modal","can,should"],
-  ["NN","Noun, sing. or mass","dog"],
-  ["NNP","Proper noun, sing.","Edinburgh"],
-  ["NNPS","Proper noun, plural","Smiths"],
-  ["NNS","Noun, plural","dogs"],
-  ["POS","Possessive ending","'s"],
-  ["PDT","Predeterminer","all,both"],
-  ["PP$","Possessive pronoun","my,one's"],
-  ["PRP","Personal pronoun","I,you,she"],
-  ["RB","Adverb","quickly"],
-  ["RBR","Adverb, comparative","faster"],
-  ["RBS","Adverb, superlative","fastest"],
-  ["RP","Particle","up,off"],
-  ["SYM","Symbol","+,%,&"],
-  ["TO","?to?","to"],
-  ["UH","Interjection","oh, oops"],
-  ["VB","verb, base form","eat"],
-  ["VBD","verb, past tense","ate"],
-  ["VBG","verb, gerund","eating"],
-  ["VBN","verb, past part","eaten"],
-  ["VBP","Verb, present","eat"],
-  ["VBZ","Verb, present","eats"],
-  ["WDT","Wh-determiner","which,that"],
-  ["WP","Wh pronoun","who,what"],
-  ["WP$","Possessive-Wh","whose"],
-  ["WRB","Wh-adverb","how,where"],
-  [",","Comma",","],
-  [".","Sent-final punct",".,!,?"],
-  [":","Mid-sent punct.",":,;,?"],
-  ["$","Dollar sign","$"],
-  ["#","Pound sign","#"],
-  ['"',"quote",'"'],
-  ["(","Left paren","("],
-  [")","Right paren",")"]
-]
 
+
+// load grammar codes, directly from README.md
+var doc_text = ("" + fs.readFileSync(path.join(__dirname, '..', 'README.md'), 'utf8')).trim();
+
+// this might be improved with a regex...
+var codes = [];
+var ct = doc_text.split('\n## TAGS\n')[1].split('\n## LICENSE\n')[0].split('\n').filter(function(s){
+  return s != '';
+}).forEach(function(c){
+  codes.push(c.split('  ').filter(function(s){
+    return s != '';
+  }));
+});
+
+// build tests
 code_tests = {};
-
 codes.forEach(function(c){
-  var words = c[2].split(',');
+  var words = c[2].split(',')
+
+  words.forEach(function(s,i){
+    words[i] = s.trim();
+  });
+
   if (c[2] == ","){
     var tags = tagger.tag(',');
   }else{
@@ -75,7 +49,7 @@ codes.forEach(function(c){
 });
 
 
-exports.jspos = vows.describe('jsPOS').addBatch({
+exports.test_jspos = vows.describe('jsPOS').addBatch({
     "The jsPOS library should be able to": {
         "create a Lexer instance" : function(){
           assert(lexer);
