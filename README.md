@@ -103,7 +103,7 @@ There are a few tools linked to npm, via **package.json**:
     WRB  Wh-adverb                how,where
     ,    Comma                    ,
     .    Sent-final punct         .,!,?
-    :    Mid-sent punct.          :,;,?
+    :    Mid-sent punct.          :,;
     $    Dollar sign              $
     #    Pound sign               #
     "    quote                    "
