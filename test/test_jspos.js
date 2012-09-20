@@ -41,6 +41,7 @@ codes.forEach(function(c){
     var tags = tagger.tag(words);
   }
 
+  // need to fix this to do tests for multiple tags
   tags.forEach(function(tag){
     code_tests[c[1] + " (" + c[0] + ")"] = function(){
       assert(tag[1] == c[0], "got " + tag[1] + ' on "' + tag[0] + '"');
