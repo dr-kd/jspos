@@ -33,13 +33,6 @@ if (!Array.prototype.filter){
   }
 }
 
-function findWordCombo(combo, words){
-  var combos = combo.split(' ');
-  return words.filter(fucntion(v, i, a){
-    combos.forEach()
-  });
-}
-
 $(function(){
   var lexer = new Lexer();
   var tagger =  new POSTagger();
