@@ -119,7 +119,7 @@ jsPOS is licensed under the GNU LGPLv3
 
 ## ACKNOWLEDGEMENTS
 
-Thanks to Mark Watson for writing FastTag, which served as the basis for jspos.
+Thanks to Mark Watson for writing FastTag, which served as the basis for jsPOS.
 
 
 ## AUTHOR
