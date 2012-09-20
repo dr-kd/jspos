@@ -1,6 +1,6 @@
-# jspos
+# jsPOS
 
-jspos is a Javascript port of [Mark Watson's FastTag Part of Speech Tagger](http://www.markwatson.com/opensource/) which was itself based on Eric Brill's trained rule set and English lexicon. jspos also includes a basic lexer that can be used to extract words and other tokens from text strings.
+jsPOS is a Javascript port of [Mark Watson's FastTag Part of Speech Tagger](http://www.markwatson.com/opensource/) which was itself based on Eric Brill's trained rule set and English lexicon. jsPOS also includes a basic lexer that can be used to extract words and other tokens from text strings.
 
 
 ## FILES
@@ -28,7 +28,7 @@ for (i in taggedWords) {
 
 See demo using [vows](http://vowsjs.org/) testing in **test/**
 
-You can install jspos in your project (once jspos is published to npm) with this command: `npm install jspos`. You can use it in your code, like this:
+You can install jspos in your project (once jsPOS is published to npm) with this command: `npm install jspos`. You can use it in your code, like this:
 
 ```javascript
 var jspos = require('jspos'),
@@ -114,7 +114,7 @@ There are a few tools linked to npm, via **package.json**:
 
 ## LICENSE
 
-jspos is licensed under the GNU LGPLv3
+jsPOS is licensed under the GNU LGPLv3
 
 
 ## ACKNOWLEDGEMENTS

@@ -75,8 +75,8 @@ codes.forEach(function(c){
 });
 
 
-exports.jspos = vows.describe('jspos').addBatch({
-    "The jspos library should be able to": {
+exports.jspos = vows.describe('jsPOS').addBatch({
+    "The jsPOS library should be able to": {
         "create a Lexer instance" : function(){
           assert(lexer);
         },
@@ -106,7 +106,7 @@ exports.jspos = vows.describe('jspos').addBatch({
           assert.equal(tagger.prettyPrint(prettyTestRes), test_text);
         },
 
-        "conform to documented codes" : code_tests
+        "conform to documented language codes" : code_tests
     }
 });
 
