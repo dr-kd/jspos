@@ -16,7 +16,8 @@
    *  the [ES5 specification](http://es5.github.com/#x15.4.4.20) for more
    *  information.
   **/
-Array.prototype.filter = function(iterator) {
+if (!Array.prototype.filter){
+  Array.prototype.filter = function(iterator) {
     var object = Object(this);
     var results = [], context = arguments[1], value;
 
@@ -30,7 +31,7 @@ Array.prototype.filter = function(iterator) {
     }
     return results;
   }
-
+}
 
 function findWordCombo(combo, words){
   var combos = combo.split(' ');
