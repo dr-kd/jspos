@@ -80,7 +80,7 @@ There are a few tools linked to npm, via **package.json**:
     NNP  Proper noun, sing.       Edinburgh
     NNPS Proper noun, plural      Smiths
     NNS  Noun, plural             dogs
-    POS  Possessive ending        ?s
+    POS  Possessive ending        's
     PDT  Predeterminer            all,both
     PP$  Possessive pronoun       my,one's
     PRP  Personal pronoun         I,you,she
