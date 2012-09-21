@@ -46,4 +46,4 @@ codes.forEach(function(c){
   });
 });
 
-exports.test_jspos = vows.describe('jsPOS language codes').addBatch(code_tests);
+exports.test_codes = vows.describe('jsPOS language codes').addBatch(code_tests);
