@@ -1,2 +1,0 @@
-#!/bin/sh
-kill `ps wwwaux | grep '[j]ava -jar.*JsTestDriver.*4224'| cut -d ' ' -f 8`

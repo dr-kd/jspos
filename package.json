@@ -1,0 +1,28 @@
+{
+  "name": "jspos",
+  "description": "Javascript port of Mark Watson's FastTag Part of Speech Tagger",
+  "version": "0.0.1",
+  "keywords": ["grammar", "speech", "fasttag"],
+  "homepage": "https://github.com/singingfish/jspos",
+  "author": "Percy Wegmann (http://www.percywegmann.com/)",
+  "scripts": {
+    "test": "vows --spec test/*",
+    "start": "node demo/server.js",
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/singingfish/jspos.git"
+  },
+  "licenses": [
+    {
+      "type": "GNU LESSER GENERAL PUBLIC LICENSE-3",
+      "url": "http://www.opensource.org/licenses/lgpl-3.0.html"
+    }
+  ],
+  "devDependencies": {
+    "vows":"",
+    "node-static" : "",
+    "uglify-js" : ""
+  }
+}
